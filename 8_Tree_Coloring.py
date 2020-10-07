@@ -98,7 +98,12 @@ def tree_coloring(edge_lines,node_lines):
                 color |= color_node(child_id)
         tree_color[current_id] = color
         return color
-    map(color_node,range(len(tree_adjlist)))
+    #Start change 
+    a = map(color_node, range(len(tree_adjlist)))
+    b=list(a)
+    for i in range(len(b)):
+        tree_color[i]=b[i]
+    #Final change      
     def colored_node_tostr(k,v):
         if v == 1:
             return str(k)+': red'
